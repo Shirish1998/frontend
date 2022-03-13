@@ -1,0 +1,23 @@
+<table border="1">
+  <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Marks</td>
+    <td>Edit</td>
+    <td>delete</td>
+  </tr>
+  <tr *ngFor="let student of studentList, let i=index">
+    <td>{{i+1}}</td>
+    <td>{{student.name}}</td>
+    <td>{{student.mark}}</td>
+    <td><button  (click)="takeStudentObjFromlist(student.id)">Edit</button></td> 
+    <td><button (click)="delete(student.id)">delete</button></td>  
+  </tr>  
+</table>
+<br>
+Enter your information<br>
+Name<input type="text" [(ngModel)]='addStudent.name' placeholder="Enter your full name"><br><br>
+Marks<input type="number"[(ngModel)]='addStudent.mark' placeholder="Enter your marks"><br>
+<button (click)="addMyStudent()">Add</button>
+
+
